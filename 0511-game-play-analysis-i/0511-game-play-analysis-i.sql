@@ -1,4 +1,5 @@
 # Write your MySQL query statement below
-select player_id,min(event_date) as first_login 
-from activity 
-group by player_id;
+SELECT c.name AS Customers 
+FROM Customers c LEFT JOIN Orders o 
+ON c.id=o.customerId 
+WHERE o.customerId IS NULL;
