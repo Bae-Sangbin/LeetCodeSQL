@@ -1,0 +1,10 @@
+/* Write your PL/SQL query statement below */
+SELECT COUNT(CUSTOMER_ID) AS RICH_COUNT
+FROM (
+    SELECT CUSTOMER_ID, COUNT(*)
+    FROM STORE
+    WHERE AMOUNT > 500
+    GROUP BY CUSTOMER_ID
+    HAVING COUNT(*) >= 1
+    )
+
