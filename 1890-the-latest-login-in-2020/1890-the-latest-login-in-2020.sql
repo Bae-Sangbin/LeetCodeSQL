@@ -1,6 +1,5 @@
-/* Write your PL/SQL query statement below */
+# Write your MySQL query statement below
 SELECT USER_ID, MAX(TIME_STAMP) AS LAST_STAMP
 FROM LOGINS
-WHERE TO_CHAR(TIME_STAMP, 'YYYY') = '2020'
+WHERE YEAR(TIME_STAMP) = 2020
 GROUP BY USER_ID
-;
