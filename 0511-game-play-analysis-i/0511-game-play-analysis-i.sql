@@ -1,5 +1,4 @@
-# Write your MySQL query statement below
-SELECT c.name AS Customers 
-FROM Customers c LEFT JOIN Orders o 
-ON c.id=o.customerId 
-WHERE o.customerId IS NULL;
+/* Write your PL/SQL query statement below */
+SELECT PLAYER_ID, TO_CHAR(MIN(EVENT_DATE), 'YYYY-MM-DD') AS FIRST_LOGIN
+FROM ACTIVITY
+GROUP BY PLAYER_ID
