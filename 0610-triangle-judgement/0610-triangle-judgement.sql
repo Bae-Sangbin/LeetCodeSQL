@@ -1,2 +1,7 @@
-# Write your MySQL query statement below
-select  *,If(x+y>z and x+z>y and y+z>x,"Yes","No") as triangle from Triangle;
+/* Write your PL/SQL query statement below */
+SELECT
+    x,y,z,
+    CASE
+        WHEN (X+Y>Z) AND (X+Z>Y) AND (Y+Z>X) THEN 'Yes'
+        ELSE 'No' END AS "triangle"
+FROM Triangle
