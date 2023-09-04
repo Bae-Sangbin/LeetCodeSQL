@@ -1,2 +1,5 @@
-# Write your MySQL query statement below
-select actor_id,director_id from ActorDirector group by actor_id,director_id having count(*)>=3;
+/* Write your PL/SQL query statement below */
+SELECT ACTOR_ID, DIRECTOR_ID
+FROM ACTORDIRECTOR
+GROUP BY ACTOR_ID, DIRECTOR_ID
+HAVING COUNT(*) >= 3
