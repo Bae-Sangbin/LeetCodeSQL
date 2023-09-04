@@ -1,6 +1,6 @@
-# Write your MySQL query statement below
-select p.product_id, round(sum(price * units) / sum(units), 2) as average_price 
-from Prices p
-join UnitsSold u on p.product_id=u.product_id
-where u.purchase_date between p.start_date and p.end_date
-group by p.product_id
+/* Write your PL/SQL query statement below */
+SELECT P.PRODUCT_ID, ROUND(SUM(P.PRICE*U.UNITS) / SUM(U.UNITS), 2) AS AVERAGE_PRICE
+FROM PRICES P, UNITSSOLD U
+WHERE P.PRODUCT_ID = U.PRODUCT_ID
+AND U.PURCHASE_DATE BETWEEN P.START_DATE AND P.END_DATE
+GROUP BY P.PRODUCT_ID
