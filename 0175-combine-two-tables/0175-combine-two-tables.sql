@@ -1,5 +1,5 @@
-# Write your MySQL query statement below
+/* Write your PL/SQL query statement below */
+SELECT P.FIRSTNAME, P.LASTNAME, A.CITY, A.STATE
+FROM PERSON P, ADDRESS A
+WHERE P.PERSONID = A.PERSONID(+)
 
-SELECT P.firstName, P.lastName, A.city, A.state
-FROM Person P LEFT JOIN Address A
-ON P.personId = A.personId
