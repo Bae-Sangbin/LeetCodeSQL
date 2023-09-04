@@ -1,5 +1,10 @@
-# Write your MySQL query statement below
-select e.employee_id from employees e  left join salaries s on e.employee_id=s.employee_id where s.salary is null
-union 
-select s.employee_id from salaries s  left join employees e on e.employee_id=s.employee_id where e.name is null
-order by employee_id;
+/* Write your PL/SQL query statement below */
+SELECT E.EMPLOYEE_ID
+FROM EMPLOYEES E, SALARIES S
+WHERE E.EMPLOYEE_ID = S.EMPLOYEE_ID(+)
+AND S.EMPLOYEE_ID IS NULL
+UNION
+SELECT S.EMPLOYEE_ID
+FROM EMPLOYEES E, SALARIES S
+WHERE E.EMPLOYEE_ID(+) = S.EMPLOYEE_ID
+AND E.EMPLOYEE_ID IS NULL
