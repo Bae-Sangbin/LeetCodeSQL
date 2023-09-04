@@ -1,4 +1,3 @@
-/* Write your PL/SQL query statement below */
+# Write your MySQL query statement below
 UPDATE SALARY
-SET SEX = (CASE WHEN SEX = 'm' THEN 'f'
-            ELSE 'm' END)
+SET SEX = IF(SEX='m', 'f', 'm')
