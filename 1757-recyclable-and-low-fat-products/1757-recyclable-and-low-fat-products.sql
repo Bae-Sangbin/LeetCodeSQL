@@ -1,5 +1,5 @@
 /* Write your PL/SQL query statement below */
-SELECT PRODUCT_ID
+SELECT product_id
 FROM PRODUCTS
 WHERE LOW_FATS = 'Y'
-AND RECYCLABLE = 'Y'
+  AND RECYCLABLE = 'Y'
