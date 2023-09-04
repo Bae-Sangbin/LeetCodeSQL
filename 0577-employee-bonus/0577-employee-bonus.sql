@@ -1,3 +1,6 @@
-# Write your MySQL query statement below
-select e.name,b.bonus from employee e left join bonus b on e.empId=b.empId 
-where bonus<1000 or bonus is null
+/* Write your PL/SQL query statement below */
+SELECT E.NAME, B.BONUS
+FROM EMPLOYEE E, BONUS B
+WHERE E.EMPID = B.EMPID(+)
+AND (B.BONUS < 1000
+OR B.BONUS IS NULL)
