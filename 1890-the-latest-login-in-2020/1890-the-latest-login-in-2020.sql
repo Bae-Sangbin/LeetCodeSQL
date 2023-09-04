@@ -1,3 +1,6 @@
-# Write your MySQL query statement below
-select user_id, max(time_stamp) as last_stamp from Logins 
-where year(time_stamp) = 2020 group By user_id;
+/* Write your PL/SQL query statement below */
+SELECT USER_ID, MAX(TIME_STAMP) AS LAST_STAMP
+FROM LOGINS
+WHERE TO_CHAR(TIME_STAMP, 'YYYY') = '2020'
+GROUP BY USER_ID
+;
