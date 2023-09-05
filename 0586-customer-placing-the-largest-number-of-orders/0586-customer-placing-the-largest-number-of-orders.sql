@@ -1,0 +1,11 @@
+/* Write your PL/SQL query statement below */
+WITH A AS (
+    SELECT CUSTOMER_NUMBER, COUNT(*) AS CNT
+    FROM ORDERS
+    GROUP BY CUSTOMER_NUMBER
+)
+SELECT CUSTOMER_NUMBER
+FROM A 
+WHERE CNT = (SELECT MAX(CNT)
+            FROM A)
+
