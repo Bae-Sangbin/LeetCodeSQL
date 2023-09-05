@@ -1,0 +1,7 @@
+/* Write your PL/SQL query statement below */
+SELECT CONTEST_ID, ROUND(COUNT(DISTINCT R.USER_ID) / (SELECT COUNT(USER_ID)
+                                                      FROM USERS)*100, 2) AS percentage
+FROM USERS U, REGISTER R
+WHERE U.USER_ID = R.USER_ID
+GROUP BY CONTEST_ID
+ORDER BY PERCENTAGE DESC, CONTEST_ID ASC
