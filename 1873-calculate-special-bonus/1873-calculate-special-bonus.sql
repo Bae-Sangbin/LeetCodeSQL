@@ -1,0 +1,13 @@
+/* Write your PL/SQL query statement below */
+SELECT E1.EMPLOYEE_ID, NVL(E2.SALARY, 0) AS BONUS
+FROM EMPLOYEES E1, (
+    SELECT EMPLOYEE_ID, NAME, SALARY
+    FROM Employees
+    WHERE MOD(EMPLOYEE_ID, 2) = 1
+    AND EMPLOYEE_ID NOT IN (SELECT EMPLOYEE_ID
+                            FROM EMPLOYEES
+                            WHERE NAME LIKE 'M%')
+    ) E2
+WHERE E1.EMPLOYEE_ID = E2.EMPLOYEE_ID(+)
+ORDER BY E1.EMPLOYEE_ID
+
