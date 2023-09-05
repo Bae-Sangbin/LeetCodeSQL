@@ -1,13 +1,12 @@
-# Write your MySQL query statement below
-SELECT employee_id, department_id
-FROM Employee
-WHERE primary_flag = 'Y'
+/* Write your PL/SQL query statement below */
+SELECT EMPLOYEE_ID, DEPARTMENT_ID
+FROM EMPLOYEE
+WHERE PRIMARY_FLAG = 'Y'
 UNION
-SELECT employee_id, department_id
-FROM Employee
-WHERE employee_id NOT IN (
-  SELECT employee_id
-  FROM Employee
-  WHERE primary_flag = 'Y'
-)
-ORDER BY employee_id;
+SELECT EMPLOYEE_ID, DEPARTMENT_ID
+FROM (
+    SELECT EMPLOYEE_ID, DEPARTMENT_ID, 
+        COUNT(*) OVER(PARTITION BY EMPLOYEE_ID) AS CNT
+    FROM EMPLOYEE
+    )
+WHERE CNT = 1
