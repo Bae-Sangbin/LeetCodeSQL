@@ -1,0 +1,13 @@
+/* Write your PL/SQL query statement below */
+SELECT USER_ID, ROUND(AVG(P), 2) AS CONFIRMATION_RATE
+FROM (
+  SELECT S.USER_ID, 
+    CASE 
+      WHEN ACTION = 'confirmed' THEN 1
+      ELSE 0 END AS P
+  FROM SIGNUPS S, CONFIRMATIONS C
+  WHERE S.USER_ID = C.USER_ID(+)
+)
+GROUP BY USER_ID
+
+
