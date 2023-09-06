@@ -1,0 +1,19 @@
+/* Write your PL/SQL query statement below */
+SELECT ID, CNT AS NUM
+FROM (
+  SELECT
+    ID, CNT, RANK() OVER(ORDER BY CNT DESC) AS RN
+  FROM (
+    SELECT ID, COUNT(*) AS CNT
+    FROM (
+      SELECT REQUESTER_ID AS ID
+      FROM REQUESTACCEPTED
+      UNION ALL
+      SELECT ACCEPTER_ID AS ID
+      FROM REQUESTACCEPTED
+    )
+    GROUP BY ID
+  )
+)
+WHERE RN = 1
+
