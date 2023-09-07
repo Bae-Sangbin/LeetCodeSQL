@@ -1,3 +1,4 @@
-# Write your MySQL query statement below
+/* Write your PL/SQL query statement below */
 UPDATE SALARY
-SET SEX = IF(SEX='m', 'f', 'm')
+SET SEX = (CASE WHEN SEX = 'm' THEN 'f'
+            ELSE 'm' END)
