@@ -1,5 +1,5 @@
-# Write your MySQL query statement below
+/* Write your PL/SQL query statement below */
 SELECT DISTINCT AUTHOR_ID AS ID
 FROM VIEWS
 WHERE AUTHOR_ID = VIEWER_ID
-ORDER BY ID;
+ORDER BY AUTHOR_ID ASC;
