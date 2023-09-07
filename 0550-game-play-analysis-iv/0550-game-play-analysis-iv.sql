@@ -1,15 +1,11 @@
 /* Write your PL/SQL query statement below */
-select
-nvl(round(count(*)/max(totcnt),2),0) as fraction
-from
-(
-select player_id,count(distinct player_id) over() as totcnt
-,row_number() over(partition by player_id order by event_date) as rnum
-,player_id-lead(player_id,1) over(order by player_id,event_date) as idcnt
-,lead(event_date,1) over(order by player_id,event_date) - event_date as dtcnt
-from
-(
-select * from Activity
+SELECT 
+    ROUND(SUM(CASE WHEN EVENT_DATE - FIRST_LOGIN = 1 THEN 1 ELSE 0 END) / COUNT(DISTINCT PLAYER_ID), 2) AS FRACTION 
+FROM (
+    SELECT 
+        PLAYER_ID, 
+        MIN(EVENT_DATE) OVER(PARTITION BY PLAYER_ID) AS FIRST_LOGIN,
+        EVENT_DATE
+    FROM ACTIVITY
 )
-)
-where idcnt=0 and dtcnt=1 and rnum=1;
+
