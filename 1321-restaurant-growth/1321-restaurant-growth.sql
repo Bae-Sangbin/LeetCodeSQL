@@ -1,4 +1,6 @@
 /* Write your PL/SQL query statement below */
+
+
 SELECT 
   TO_CHAR(VISITED_ON, 'YYYY-MM-DD') AS VISITED_ON,
   TOTAL_AMOUNT AS AMOUNT,
@@ -19,3 +21,4 @@ FROM (
   WHERE VISITED_ON >= FIRST_DATE + 6
 )
 ORDER BY VISITED_ON ASC
+;
