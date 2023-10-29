@@ -1,18 +1,19 @@
 /* Write your PL/SQL query statement below */
 SELECT
-    'Low Salary' AS category
-    , COUNT(income) AS accounts_count
-FROM Accounts
-WHERE income < 20000
+    'Low Salary' AS CATEGORY,
+    COUNT(income) AS ACCOUNTS_COUNT
+FROM ACCOUNTS
+WHERE INCOME < 20000
 UNION
 SELECT
-    'Average Salary' AS category
-    , COUNT(income) AS accounts_count
-FROM Accounts
-WHERE income >= 20000 AND income <= 50000
+    'Average Salary' AS CATEGORY,
+    COUNT(income) AS ACCOUNTS_COUNT
+FROM ACCOUNTS
+WHERE INCOME >= 20000 AND INCOME <= 50000
 UNION
 SELECT
-    'High Salary' AS category
-    , COUNT(income) AS accounts_count
-FROM Accounts
-WHERE income > 50000
+    'High Salary' AS CATEGORY,
+    COUNT(income) AS ACCOUNTS_COUNT
+FROM ACCOUNTS
+WHERE INCOME > 50000
+;
