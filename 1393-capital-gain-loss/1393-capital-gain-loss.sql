@@ -7,3 +7,4 @@ FROM (
     FROM STOCKS
     )
 GROUP BY STOCK_NAME
+;
