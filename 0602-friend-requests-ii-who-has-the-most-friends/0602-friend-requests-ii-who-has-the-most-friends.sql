@@ -16,4 +16,5 @@ FROM (
   )
 )
 WHERE RN = 1
+;
 
